@@ -9,4 +9,8 @@ class Animal {
   }
 }
 
-
+function main(){
+  let a=new Animal("cow","4");
+  console.log(a.describe());
+}
+main();

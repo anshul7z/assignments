@@ -4,7 +4,22 @@
 */
 
 function isPalindrome(str) {
+  //convert the string to lowercase and remove all the special ch and spaces usnig regex
+  str=str.toLowerCase().replace(/[\s~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, '');
+  //length of the string
+  n=str.length;
+  let front=0;
+  let end=n-1;
+  while(front<=end){
+    if(str[front]!=str[end]){
+      return false;
+    }
+    front++;
+    end--;
+  }
   return true;
 }
+
+console.log(isPalindrome("Eva, can I see bees in a cave?"));
 
 module.exports = isPalindrome;

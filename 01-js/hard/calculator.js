@@ -16,6 +16,44 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  result;
+  constructor(){
+    this.result=0;
+  }
+  add(a){
+    this.result+=a;
+  }
+  subtract(a){
+    this.result-=a;
+  }
+  multiply(a){
+    this.result*=a;
+  }
+  divide(a){
+    if(a==0){
+      console.log("it inside")
+      throw new Error();
+    }
+    this.result/=a;
+  }
+  clear(){
+    this.result=0;
+  }
+  getResult(){
+    return this.result;
+  }
+  calculate(str){
+    str=str.replace(/\^/g,'**');
+    this.result=eval(str);
+    return this.result;
+  }
+
+}
+
+let cal=new Calculator();
+cal.add(10);
+cal.divide(2);
+console.log(cal.getResult());
 
 module.exports = Calculator;
